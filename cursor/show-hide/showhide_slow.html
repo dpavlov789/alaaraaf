@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="toggleButton">Показать/Скрыть</button>
+    <div id="myBlock" class="block">
+        Этот блок будет плавно скрываться и показываться
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#toggleButton').click(function() {
+                $('#myBlock').slideToggle(500); // 500ms для анимации
+            });
+        });
+    </script>
+</body>
+</html>

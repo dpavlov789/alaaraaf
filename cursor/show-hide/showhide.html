@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .block {
+            padding: 20px;
+            background-color: #f0f0f0;
+            margin: 10px;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Показать/Скрыть</button>
+    <div id="myBlock" class="block">
+        Этот блок будет скрываться и показываться
+    </div>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const block = document.getElementById('myBlock');
+
+        button.addEventListener('click', function() {
+            block.classList.toggle('hidden');
+            button.textContent = block.classList.contains('hidden') ? 'Показать' : 'Скрыть';
+        });
+    </script>
+</body>
+</html>
+

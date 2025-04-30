@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Placeholder for Select</title>
+    <style>
+        .select-group {
+            position: relative;
+            margin: 20px;
+        }
+        
+        .select-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            background-color: white;
+            cursor: pointer;
+        }
+        
+        .select-label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .select-field:focus + .select-label,
+        .select-field:not([value=""]) + .select-label {
+            top: 0;
+            left: 5px;
+            font-size: 12px;
+            background-color: white;
+            padding: 0 5px;
+            color: #2196F3;
+        }
+        
+        .select-field:focus {
+            border-color: #2196F3;
+        }
+
+        /* Custom dropdown arrow */
+        .select-group::after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="select-group">
+        <select class="select-field" required>
+            <option value=""> </option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+        </select>
+        <label class="select-label">Select an option</label>
+    </div>
+
+    <div class="select-group">
+        <select class="select-field" required>
+            <option value=""> </option>
+            <option value="a">Category A</option>
+            <option value="b">Category B</option>
+            <option value="c">Category C</option>
+        </select>
+        <label class="select-label">Choose category</label>
+    </div>
+
+    <script>
+        // Add JavaScript to handle select changes
+        document.querySelectorAll('.select-field').forEach(select => {
+            select.addEventListener('change', function() {
+                // The CSS will handle the floating effect
+            });
+        });
+    </script>
+</body>
+</html> 

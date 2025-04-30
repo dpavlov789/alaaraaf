@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Placeholder</title>
+    <style>
+        .input-group {
+            position: relative;
+            margin: 20px;
+        }
+        
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            outline: none;
+        }
+        
+        .input-label {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .input-field:focus + .input-label,
+        .input-field:not(:placeholder-shown) + .input-label {
+            top: 0;
+            left: 5px;
+            font-size: 12px;
+            background-color: white;
+            padding: 0 5px;
+            color: #2196F3;
+        }
+        
+        .input-field:focus {
+            border-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="input-group">
+        <input type="text" class="input-field" placeholder=" ">
+        <label class="input-label">Your Name</label>
+    </div>
+
+    <div class="input-group">
+        <input type="email" class="input-field" placeholder=" ">
+        <label class="input-label">Email Address</label>
+    </div>
+
+    <script>
+        // No JavaScript needed for basic functionality
+        // The effect is achieved using CSS only
+    </script>
+</body>
+</html> 
